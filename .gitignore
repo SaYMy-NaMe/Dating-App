@@ -486,3 +486,7 @@ $RECYCLE.BIN/
 # Files
 appsettings.json
 
+# vscode
+.vscode/
+
+
