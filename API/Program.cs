@@ -18,6 +18,19 @@ var app = builder.Build();
 app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod()
     .WithOrigins("http://localhost:4200", "https://localhost:4200")); 
 
+app.MapGet("/", () => {
+    try
+    {
+        return "Server is running";
+    }
+    catch (Exception ex)
+    {
+        // Log the exception (e.g., to a file, console, or monitoring system)
+        Console.WriteLine($"Error: {ex.Message}");
+        return "An unexpected error occurred. Please try again later.";
+    }
+});
+
 app.MapControllers();
 
 app.Run();
