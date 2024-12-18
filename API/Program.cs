@@ -1,4 +1,6 @@
 using API.Data;
+using API.Interfaces;
+using API.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +13,7 @@ builder.Services.AddDbContext<DataContext>(opt =>
 }); 
 
 builder.Services.AddCors(); 
+builder.Services.AddScoped<ITokenService, TokenService>(); //Common Practice: Interface, Implemention Class (Gives high level abstraction, Decoupling)
 
 var app = builder.Build();
 
@@ -27,7 +30,7 @@ app.MapGet("/", () => {
     {
         // Log the exception (e.g., to a file, console, or monitoring system)
         Console.WriteLine($"Error: {ex.Message}");
-        return "An unexpected error occurred. Please try again later.";
+        return "An unexpected error occurred. Please Check the Console";
     }
 });
 
