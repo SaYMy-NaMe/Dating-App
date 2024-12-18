@@ -24,8 +24,10 @@ public class AccountController(DataContext context) : BaseApiController
             PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)), 
             PasswordSalt = hmac.Key
         }; 
+        
         context.Users.Add(user); 
         await context.SaveChangesAsync(); 
+        
         return user; 
     }
     private async Task<bool> UserExists(string username)
