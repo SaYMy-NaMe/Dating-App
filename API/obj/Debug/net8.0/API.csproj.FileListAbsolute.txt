@@ -127,3 +127,8 @@ C:\Users\ashraful\Desktop\DatingApp\API\bin\Debug\net8.0\ru\Microsoft.CodeAnalys
 C:\Users\ashraful\Desktop\DatingApp\API\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\ashraful\Desktop\DatingApp\API\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\ashraful\Desktop\DatingApp\API\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\ashraful\Desktop\DatingApp\API\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\ashraful\Desktop\DatingApp\API\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ashraful\Desktop\DatingApp\API\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\ashraful\Desktop\DatingApp\API\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ashraful\Desktop\DatingApp\API\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
