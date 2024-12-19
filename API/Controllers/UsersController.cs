@@ -17,7 +17,7 @@ public class UsersController(DataContext context) : BaseApiController
     }
 
     [Authorize]
-    [HttpGet("{id:int}")] // api/v1/users/id
+    [HttpGet("{id:int}")] // api/users/id
     public async Task<ActionResult<AppUser>> GetUser(int id)
     {
         var user = await context.Users.FindAsync(id); 
