@@ -14,6 +14,7 @@ export class AppComponent implements OnInit{
   http = inject(HttpClient); 
   title = 'DatingApp';
   users: any; 
+loggedIn: any;
 
   ngOnInit(): void {
     this.http.get('https://localhost:5001/api/users') .subscribe({
