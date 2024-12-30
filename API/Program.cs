@@ -7,11 +7,12 @@ using Microsoft.IdentityModel.Tokens;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddApplicationServices(builder.Configuration); 
-builder.Services.AddIdentityServices(builder.Configuration);  
+builder.Services.AddApplicationServices(builder.Configuration);
+builder.Services.AddIdentityServices(builder.Configuration);
 var app = builder.Build();
 
-app.MapGet("/", () => {
+app.MapGet("/", () =>
+{
     try
     {
         return "Server is running";
@@ -47,10 +48,10 @@ using (var scope = app.Services.CreateScope())
 
 // Configure the HTTP request pipeline.
 app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod()
-    .WithOrigins("http://localhost:4200", "https://localhost:4200")); 
+    .WithOrigins("http://localhost:4200", "https://localhost:4200"));
 
-app.UseAuthentication(); 
-app.UseAuthorization(); 
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllers();
 

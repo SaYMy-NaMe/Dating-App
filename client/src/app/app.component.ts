@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavComponent } from "./nav/nav.component";
+import { NavComponent } from './nav/nav.component';
 import { AccountService } from './_services/account.service';
 
 @Component({
@@ -11,30 +11,30 @@ import { AccountService } from './_services/account.service';
   styleUrl: './app.component.css',
   imports: [RouterOutlet, NavComponent],
 })
-export class AppComponent implements OnInit{
-  http = inject(HttpClient); 
-  private accountService = inject(AccountService); 
+export class AppComponent implements OnInit {
+  http = inject(HttpClient);
+  private accountService = inject(AccountService);
   title = 'DatingApp';
-  users: any; 
+  users: any;
   loggedIn: any;
 
   ngOnInit(): void {
-    this.getUsers(); 
-    this.setCurrentUser(); 
+    this.getUsers();
+    this.setCurrentUser();
   }
 
-  setCurrentUser(){
-    const userString = localStorage.getItem('user'); 
-    if(!userString) return; 
-    const user = JSON.parse(userString); 
-    this.accountService.currentUser.set(user); 
+  setCurrentUser() {
+    const userString = localStorage.getItem('user');
+    if (!userString) return;
+    const user = JSON.parse(userString);
+    this.accountService.currentUser.set(user);
   }
 
-  getUsers(){
-      this.http.get('https://localhost:5001/api/users') .subscribe({
-      next: response => this.users = response, 
-      error: error => console.log(error), 
-      complete: () => console.log('Request has completed')
-    })
+  getUsers() {
+    this.http.get('https://localhost:5001/api/users').subscribe({
+      next: (response) => (this.users = response),
+      error: (error) => console.log(error),
+      complete: () => console.log('Request has completed'),
+    });
   }
 }
