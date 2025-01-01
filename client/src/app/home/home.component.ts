@@ -13,11 +13,15 @@ export class HomeComponent implements OnInit {
   http = inject(HttpClient);
   registerMode = false;
   users: any;
+  ngOnInit(): void {
+    this.getUsers();
+  }
   registerToggle() {
     this.registerMode = !this.registerMode;
   }
-  ngOnInit(): void {
-    this.getUsers();
+
+  cancelRegisterMode(event: boolean) {
+    this.registerMode = event;
   }
   getUsers() {
     this.http.get('https://localhost:5001/api/users').subscribe({
