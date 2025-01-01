@@ -4,6 +4,7 @@ import { AccountService } from '../_services/account.service';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-nav',
@@ -13,6 +14,9 @@ import { ToastrService } from 'ngx-toastr';
   styleUrl: './nav.component.css',
 })
 export class NavComponent {
+  authGaurd() {
+    throw new Error('Method not implemented.');
+  }
   accountService = inject(AccountService);
   private router = inject(Router);
   private toastr = inject(ToastrService);
