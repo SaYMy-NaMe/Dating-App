@@ -33,7 +33,16 @@ public class BuggyController(DataContext context) : BaseApiController
         catch (Exception ex)
         {
 
-            return StatusCode(500, "Computer says no!");
+            var errorResponse = new
+            {
+                Message = "An unexpected error occurred. Please try again later.",
+                Details = ex.StackTrace // Optionally, you can add more details if needed
+            };
+
+            // Log the exception (if you have logging set up)
+            // logger.LogError(ex, "Error occurred while fetching user.");
+
+            return StatusCode(500, errorResponse);
         }
     }
     [HttpGet("bad-request")]

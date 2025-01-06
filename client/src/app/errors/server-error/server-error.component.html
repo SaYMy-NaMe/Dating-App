@@ -1,1 +1,34 @@
-<p>server-error works!</p>
+<h4>Internal Server Error</h4>
+
+<div *ngIf="error; else noError">
+  <h5 class="text-danger">
+    Error: {{ error.message || "No message available" }}
+  </h5>
+  <p class="font-weight-bold">
+    Note: If you are encountering this error, then Angular is not to blame!
+  </p>
+  <p>What to do next?</p>
+  <ol>
+    <li>
+      Open Chrome dev tools and check the failing network request in the network
+      tab
+    </li>
+    <li>Examine the URL of the failing request</li>
+    <li>
+      Reproduce the error in Postman - if you can reproduce the error then
+      Angular is not to blame!
+    </li>
+  </ol>
+  <p class="font-weight-bold">
+    Following is the stack trace - check the first two lines; this tells you
+    exactly which line of the code caused the problem!
+  </p>
+  <code class="mt-5" style="background-color: whitesmoke">{{
+    error.details || "No details available"
+  }}</code>
+</div>
+
+<ng-template #noError>
+  <h5 class="text-danger">Error details are not available.</h5>
+  <p>Try checking the network request in developer tools.</p>
+</ng-template>
