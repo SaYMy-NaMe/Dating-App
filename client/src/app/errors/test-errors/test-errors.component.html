@@ -17,4 +17,15 @@
   >
     Test 400 Validation Error
   </button>
+
+  @if(validationErrors.length > 0){
+  <div class="row mt-5">
+    <ul class="text-danger">
+      @for (error of validationErrors; track $index) {
+      <li>{{ error }}</li>
+      <!-- Data Destructuring / Interpolation -->
+      }
+    </ul>
+  </div>
+  }
 </div>
