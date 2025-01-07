@@ -1,9 +1,7 @@
 <h4>Internal Server Error</h4>
 
 <div *ngIf="error; else noError">
-  <h5 class="text-danger">
-    Error: {{ error.message || "No message available" }}
-  </h5>
+  <h5 class="text-danger">Error: {{ error.message }}</h5>
   <p class="font-weight-bold">
     Note: If you are encountering this error, then Angular is not to blame!
   </p>
@@ -24,7 +22,7 @@
     exactly which line of the code caused the problem!
   </p>
   <code class="mt-5" style="background-color: whitesmoke">{{
-    error.details || "No details available"
+    error.details
   }}</code>
 </div>
 
