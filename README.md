@@ -1,5 +1,18 @@
 # Dating Site
 
-## ASPNET Core and Angular with SQlite
+## ASP.NET Core and Angular with SQLite
 
-### Details regarding the project and installation process will be provided at a later stage. Please check back for updates.
+### Project Overview:
+
+- **Backend**: ASP.NET Core
+- **Frontend**: Angular
+- **Database**: SQLite
+
+### Installation Process:
+
+- Detailed installation instructions will be provided soon.
+- Please check back later for updates regarding setup and configuration.
+
+---
+
+Thank you for your patience!
