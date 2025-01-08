@@ -18,6 +18,7 @@ public static class ApplicationServiceExtension
 
         services.AddCors();
         services.AddScoped<ITokenService, TokenService>(); //Common Practice: Interface, Implemention Class (Gives high level abstraction, Decoupling)
+        services.AddScoped<IUserRepository, UserRepository>();
 
         return services;
     }
