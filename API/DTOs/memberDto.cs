@@ -2,7 +2,7 @@ using System;
 
 namespace API.DTOs;
 
-public class memberDto
+public class MemberDto
 {
     public int Id { get; set; }
     public string? Username { get; set; }
