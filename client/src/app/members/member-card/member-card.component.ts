@@ -6,8 +6,8 @@ import { Member } from '../../_models/member';
   standalone: true,
   imports: [],
   templateUrl: './member-card.component.html',
-  styleUrl: './member-card.component.css'
+  styleUrl: './member-card.component.css',
 })
 export class MemberCardComponent {
-  member = input.required<Member>(); 
+  member = input.required<Member>();
 }
