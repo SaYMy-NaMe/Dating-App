@@ -419,3 +419,5 @@ C:\Users\ashrafur\Desktop\New folder\Dating-App\API\obj\Debug\net8.0\refint\API.
 C:\Users\ashrafur\Desktop\New folder\Dating-App\API\obj\Debug\net8.0\API.pdb
 C:\Users\ashrafur\Desktop\New folder\Dating-App\API\obj\Debug\net8.0\API.genruntimeconfig.cache
 C:\Users\ashrafur\Desktop\New folder\Dating-App\API\obj\Debug\net8.0\ref\API.dll
+C:\Users\ashrafur\Desktop\Dating-App\API\bin\Debug\net8.0\CloudinaryDotNet.dll
+C:\Users\ashrafur\Desktop\Dating-App\API\bin\Debug\net8.0\Newtonsoft.Json.dll
