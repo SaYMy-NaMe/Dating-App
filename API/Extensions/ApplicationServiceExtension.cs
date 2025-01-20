@@ -21,6 +21,7 @@ public static class ApplicationServiceExtension
         services.AddScoped<ITokenService, TokenService>(); //Common Practice: Interface, Implemention Class (Gives high level abstraction, Decoupling)
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IPhotoService, PhotoService>();
+        services.AddScoped<LogUserActivity>();
         services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         services.Configure<CloudinarySettings>(config.GetSection("CloudinarySettings"));
         return services;
