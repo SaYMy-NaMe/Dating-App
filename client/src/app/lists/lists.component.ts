@@ -3,7 +3,7 @@ import { LikesService } from '../_services/likes.service';
 import { Member } from '../_models/member';
 import { FormsModule } from '@angular/forms';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
-import { MemberCardComponent } from "../members/member-card/member-card.component";
+import { MemberCardComponent } from '../members/member-card/member-card.component';
 
 @Component({
   selector: 'app-lists',
@@ -27,7 +27,7 @@ export class ListsComponent {
       case 'likedBy':
         return 'Members who like you';
       default:
-        return 'Mutul';
+        return 'Mutual';
     }
   }
   loadLikes() {
