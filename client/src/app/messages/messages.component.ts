@@ -10,7 +10,13 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
 @Component({
   selector: 'app-messages',
   standalone: true,
-  imports: [ButtonsModule, FormsModule, TimeagoModule, RouterLink, PaginationModule],
+  imports: [
+    ButtonsModule,
+    FormsModule,
+    TimeagoModule,
+    RouterLink,
+    PaginationModule,
+  ],
   templateUrl: './messages.component.html',
   styleUrl: './messages.component.css',
 })
@@ -32,8 +38,8 @@ export class MessagesComponent implements OnInit {
 
   getRoute(message: Message) {
     if (this.container === 'Outbox')
-      return `members/${message.recipientUsername}`;
-    else return `members/${message.senderUsername}`;
+      return `/members/${message.recipientUsername}`;
+    else return `/members/${message.senderUsername}`;
   }
 
   pageChanged(event: any) {
