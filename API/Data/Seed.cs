@@ -29,6 +29,7 @@ public class Seed
             // user.PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes("Pa$$w0rd"));
             // user.PasswordSalt = hmac.Key;
             // context.Users.Add(user);
+            user.UserName = user.UserName!.ToLower();
             await userManager.CreateAsync(user, "Pa$$w0rd");
         }
     }
