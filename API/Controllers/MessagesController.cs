@@ -68,7 +68,7 @@ public class MessagesController(IMessageRepository messageRepository, IUserRepos
         //     messageRepository.DeleteMessage(message);
         // }
 
-        //New Approach: Dotnet 8: Using this for a bit of slightly cleaner syntax 
+        //New Approach: Dotnet 8: Using this for slightly cleaner syntax 
         if (message is { SenderDeleted: true, RecipientDeleted: true })
         {
             messageRepository.DeleteMessage(message);
