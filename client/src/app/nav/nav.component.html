@@ -21,7 +21,7 @@
           >Messages</a
         >
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *appHasRole="['Admin', 'Moderator']">
         <a routerLink="/admin" routerLinkActive="active" class="nav-link"
           >Admin</a
         >
