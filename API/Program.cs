@@ -1,13 +1,10 @@
-using System.Text;
 using API.Data;
 using API.Entities;
 using API.Extensions;
 using API.Middleware;
 using API.SignalR;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -52,6 +49,8 @@ try
     var userManager = services.GetRequiredService<UserManager<AppUser>>();
     var roleManager = services.GetRequiredService<RoleManager<AppRole>>();
     await context.Database.MigrateAsync();
+    await context.Database.ExecuteSqlRawAsync("DELETE FROM [Connections]"); // Sqlite 
+    // await context.Database.ExecuteSqlRawAsync("DELETE FROM \"Connections\""); // PostgresSql
     await Seed.SeedUsers(userManager, roleManager);
 }
 catch (Exception ex)
