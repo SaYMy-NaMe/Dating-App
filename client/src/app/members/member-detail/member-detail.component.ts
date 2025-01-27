@@ -6,7 +6,6 @@ import { GalleryItem, GalleryModule, ImageItem } from 'ng-gallery';
 import { TimeagoModule } from 'ngx-timeago';
 import { DatePipe } from '@angular/common';
 import { MemberMessagesComponent } from '../member-messages/member-messages.component';
-import { Message } from '../../_models/message';
 import { MessageService } from '../../_services/message.service';
 import { PresenceService } from '../../_services/presence.service';
 import { AccountService } from '../../_services/account.service';
@@ -33,10 +32,12 @@ export class MemberDetailComponent implements OnInit, OnDestroy {
   member: Member = {} as Member;
   images: GalleryItem[] = [];
   activeTab?: TabDirective;
+  hasLiked = false;
   ngOnInit(): void {
     this.subscribeToRouteData();
     this.subscribeToQueryParams();
   }
+
   selectTab(heading: string) {
     if (this.memberTabs) {
       const messageTab = this.memberTabs.tabs.find(

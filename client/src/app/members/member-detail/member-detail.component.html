@@ -31,6 +31,7 @@
       </div>
       <div class="card-footer">
         <div class="btn-group d-flex">
+          <!-- Like functionality  -->
           <button class="btn btn-primary">Like</button>
           <button (click)="selectTab('Messages')" class="btn btn-success">
             Message
@@ -68,9 +69,7 @@
         }
       </tab>
       <tab heading="Messages" (selectTab)="onTabActivated($event)">
-        <app-member-messages
-          [username]="member.username"
-        ></app-member-messages>
+        <app-member-messages [username]="member.username"></app-member-messages>
       </tab>
     </tabset>
   </div>
