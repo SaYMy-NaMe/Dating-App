@@ -6,6 +6,7 @@ using API.DTOs;
 using API.Entities;
 using API.Interfaces;
 using AutoMapper;
+using CloudinaryDotNet.Actions;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -39,7 +40,7 @@ public class AccountController(UserManager<AppUser> userManager, ITokenService t
             Username = user.UserName,
             Token = await tokenService.CreateToken(user),
             KnownAs = user.KnownAs,
-            Gender = user.Gender
+            Gender = user.Gender,
         };
     }
 
