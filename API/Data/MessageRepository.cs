@@ -35,8 +35,8 @@ public class MessageRepository(DataContext context, IMapper mapper) : IMessageRe
     {
         return await context.Groups
             .Include(x => x.Connections)
-            .Where(x => x.Connections.Any( c=> c.ConnectionId == connectionId))
-            .FirstOrDefaultAsync(); 
+            .Where(x => x.Connections.Any(c => c.ConnectionId == connectionId))
+            .FirstOrDefaultAsync();
     }
 
     public async Task<Message?> GetMessage(int id)
@@ -95,10 +95,5 @@ public class MessageRepository(DataContext context, IMapper mapper) : IMessageRe
     public void RemoveConnection(Connection connection)
     {
         context.Connections.Remove(connection);
-    }
-
-    public async Task<bool> SaveAllAsync()
-    {
-        return await context.SaveChangesAsync() > 0;
     }
 }
