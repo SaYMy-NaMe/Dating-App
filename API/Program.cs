@@ -14,26 +14,15 @@ builder.Services.AddIdentityServices(builder.Configuration);
 var app = builder.Build();
 app.UseMiddleware<ExceptionMiddleware>();
 
-app.MapGet("/", () =>
-{
-    try
-    {
-        return "Server is running";
-    }
-    catch (Exception ex)
-    {
-        // Log the exception (e.g., to a file, console, or monitoring system)
-        Console.WriteLine($"Error: {ex.Message}");
-        return "An unexpected error occurred. Please Check the Console";
-    }
-});
-
 // Configure the HTTP request pipeline.
 app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().AllowCredentials()
     .WithOrigins("http://localhost:4200", "https://localhost:4200"));
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseDefaultFiles();
+app.UseStaticFiles();
 
 app.MapControllers();
 app.MapHub<PresenceHub>("hubs/presence");
