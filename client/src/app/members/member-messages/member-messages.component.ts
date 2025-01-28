@@ -22,6 +22,13 @@ export class MemberMessagesComponent implements AfterViewChecked {
   messageService = inject(MessageService);
   username = input.required<string>();
   messageContent = '';
+  isUserScrolling = false;
+  onUserScroll() {
+    const container = this.scrollContainer?.nativeElement;
+    this.isUserScrolling =
+      container.scrollTop <
+      container.scrollHeight - container.clientHeight - 10;
+  }
   sendMessage() {
     this.messageService
       .sendMessage(this.username(), this.messageContent)
@@ -31,7 +38,7 @@ export class MemberMessagesComponent implements AfterViewChecked {
     this.scrollToBottom();
   }
   ngAfterViewChecked(): void {
-    this.scrollToBottom();
+    if (!this.isUserScrolling) this.scrollToBottom();
   }
   private scrollToBottom() {
     if (this.scrollContainer) {
